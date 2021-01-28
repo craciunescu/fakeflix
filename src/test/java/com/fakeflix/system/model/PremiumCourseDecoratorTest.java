@@ -21,7 +21,7 @@ public class PremiumCourseDecoratorTest {
         final Movie baseCourse = new BaseMovie("Software design fundamentals", Pegi.ALLPUBLIC,
                 List.of("SOLID_PRINCIPLES", "GOF_PATTERNS"), author);
 
-        final PremiumCourseDecorator premiumCourse = new PremiumCourseDecorator(baseCourse);
+        final PremiumMovieDecorator premiumCourse = new PremiumMovieDecorator(baseCourse);
 
         assertThat(premiumCourse).isNotNull();
         assertThat(premiumCourse.getAuthor()).isNotNull();

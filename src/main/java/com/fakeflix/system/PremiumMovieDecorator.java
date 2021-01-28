@@ -3,9 +3,9 @@ package com.fakeflix.system;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PremiumCourseDecorator extends CourseDecorator {
+public class PremiumMovieDecorator extends MovieDecorator {
 
-    public PremiumCourseDecorator(Movie decoratedCourse) {
+    public PremiumMovieDecorator(Movie decoratedCourse) {
         super(decoratedCourse);
     }
 

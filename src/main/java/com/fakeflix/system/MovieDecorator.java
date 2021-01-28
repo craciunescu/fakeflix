@@ -4,11 +4,11 @@ import java.util.List;
 
 import com.fakeflix.system.state.MovieState;
 
-public class CourseDecorator implements Movie {
+public class MovieDecorator implements Movie {
 
     private Movie decoratedCourse;
 
-    public CourseDecorator(Movie decoratedCourse) {
+    public MovieDecorator(Movie decoratedCourse) {
         this.decoratedCourse = decoratedCourse;
     }
 
