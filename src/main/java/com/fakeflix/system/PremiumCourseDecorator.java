@@ -10,12 +10,12 @@ public class PremiumCourseDecorator extends CourseDecorator {
     }
 
     @Override
-    public List<String> getSubjects() {
-        List<String> premiumSubjects = new ArrayList<>();
-        premiumSubjects.addAll(super.getSubjects());
-        premiumSubjects.add("Online Subjects");
-        premiumSubjects.add("Premium Subjects");
-        return premiumSubjects;
+    public List<String> getTags() {
+        List<String> premiumtags = new ArrayList<>();
+        premiumtags.addAll(super.getTags());
+        premiumtags.add("Online tags");
+        premiumtags.add("Premium tags");
+        return premiumtags;
     }
 
 }

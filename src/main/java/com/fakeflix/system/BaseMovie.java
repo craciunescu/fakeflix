@@ -3,27 +3,24 @@ package com.fakeflix.system;
 import java.util.List;
 
 import com.fakeflix.system.state.MovieState;
-import com.fakeflix.system.state.NotAvailableState;
-import com.fakeflix.system.state.AvailableState;
 
 public class BaseMovie implements Movie {
 
     private String name;
 
-    private Level level;
+    private Pegi pegi;
 
-    private List<String> subjects;
+    private List<String> tags;
 
-    private Teacher teacher;
+    private Author author;
 
     private MovieState state;
 
-    public BaseMovie(String name, Level level, List<String> subjects, Teacher teacher) {
+    public BaseMovie(String name, Pegi pegi, List<String> tags, Author author) {
         this.name = name;
-        this.level = level;
-        this.subjects = subjects;
-        this.teacher = teacher;
-        this.state = (teacher != null) ? new AvailableState() : new NotAvailableState();
+        this.pegi = pegi;
+        this.tags = tags;
+        this.author = author;
     }
 
     @Override
@@ -32,18 +29,18 @@ public class BaseMovie implements Movie {
     }
 
     @Override
-    public Level getLevel() {
-        return level;
+    public Pegi getPegi() {
+        return pegi;
     }
 
     @Override
-    public List<String> getSubjects() {
-        return subjects;
+    public List<String> getTags() {
+        return tags;
     }
 
     @Override
-    public Teacher getTeacher() {
-        return teacher;
+    public Author getAuthor() {
+        return author;
     }
 
     @Override
@@ -57,12 +54,12 @@ public class BaseMovie implements Movie {
     }
 
     @Override
-    public void setTeacher(Teacher teacher) {
-        this.teacher = teacher;
+    public void setAuthor(Author author) {
+        this.author = author;
     }
 
     @Override
-    public void ready(Teacher teacher) {
+    public void ready() {
         state.available(this);
     }
 

@@ -2,8 +2,8 @@ package com.fakeflix.system.model;
 
 import com.fakeflix.system.Movie;
 import com.fakeflix.system.CourseBuilder;
-import com.fakeflix.system.Level;
-import com.fakeflix.system.Teacher;
+import com.fakeflix.system.Pegi;
+import com.fakeflix.system.Author;
 
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -13,17 +13,17 @@ import java.util.List;
 public class CourseBuilderTest {
     @Test
     void shouldInitialize() {
-        final Teacher teacher = new Teacher("John", "Doe");
+        final Author author = new Author("John", "Doe");
 
-        final Movie course = new CourseBuilder().name("Software design fundamentals").level(Level.BEGINNER)
-                .subjects(List.of("SOLID_PRINCIPLES", "GOF_PATTERNS")).teacher(teacher).build();
+        final Movie movie = new CourseBuilder().name("FILM1").pegi(Pegi.ALLPUBLIC).tags(List.of("TAG1", "TAG2"))
+                .author(author).build();
 
-        assertThat(course).isNotNull();
-        assertThat(course.getTeacher()).isNotNull();
-        assertThat(course.getLevel()).isNotNull();
-        assertThat(course.getName()).isNotBlank();
-        assertThat(course.getSubjects()).contains("SOLID_PRINCIPLES");
-        assertThat(course.getSubjects()).contains("GOF_PATTERNS");
+        assertThat(movie).isNotNull();
+        assertThat(movie.getAuthor()).isNotNull();
+        assertThat(movie.getPegi()).isNotNull();
+        assertThat(movie.getName()).isNotBlank();
+        assertThat(movie.getTags()).contains("TAG1");
+        assertThat(movie.getTags()).contains("TAG2");
     }
 
 }

@@ -15,8 +15,8 @@ import org.junit.jupiter.api.Test;
 public class CourseStateTest {
     @Test
     void shouldNotChangeStateToReady() {
-        final List<String> subjects = List.of("SUBJECT1", "SUBJECT2");
-        final Movie course = new BaseMovie("NAME", Level.BEGINNER, subjects, null);
+        final List<String> tags = List.of("TAG1", "TAG2");
+        final Movie course = new BaseMovie("NAME", Pegi.ALLPUBLIC, tags, null);
 
         course.start();
 
@@ -25,22 +25,18 @@ public class CourseStateTest {
 
     @Test
     void shouldChangeStateToReadyWhenAssignedATeacher() {
-        final List<String> subjects = List.of("SUBJECT1", "SUBJECT2");
-        final Movie course = new BaseMovie("NAME", Level.BEGINNER, subjects, null);
+        final List<String> tags = List.of("TAG1", "TAG2");
+        final Movie course = new BaseMovie("NAME", Pegi.ALLPUBLIC, tags, null);
 
-        final Teacher teacher = new Teacher("TEACHER_NAME", "TEACHER_LASTNAME");
-        course.ready(teacher);
+        course.ready();
         assertThat(course.getState()).isInstanceOf(AvailableState.class);
     }
 
     @Test
     void shouldChangeStateToStartedWhenCourseIsReady() {
-        final List<String> subjects = List.of("SUBJECT1", "SUBJECT2");
-        final Movie course = new BaseMovie("NAME", Level.BEGINNER, subjects, null);
+        final List<String> tags = List.of("TAG1", "TAG2");
+        final Movie course = new BaseMovie("NAME", Pegi.ALLPUBLIC, tags, null);
 
-        final Teacher teacher = new Teacher("TEACHER_NAME", "TEACHER_LASTNAME");
-
-        course.ready(teacher);
         course.start();
 
         assertThat(course.getState()).isInstanceOf(StartedState.class);
@@ -48,12 +44,10 @@ public class CourseStateTest {
 
     @Test
     void shouldNotChangeStateToFinishedWhenCourseIsNotStarted() {
-        final List<String> subjects = List.of("SUBJECT1", "SUBJECT2");
-        final Movie course = new BaseMovie("NAME", Level.BEGINNER, subjects, null);
+        final List<String> tags = List.of("TAG1", "TAG2");
+        final Movie course = new BaseMovie("NAME", Pegi.ALLPUBLIC, tags, null);
 
-        final Teacher teacher = new Teacher("TEACHER_NAME", "TEACHER_LASTNAME");
-
-        course.ready(teacher);
+        course.ready();
         course.finish();
 
         assertThat(course.getState()).isInstanceOf(AvailableState.class);
@@ -61,12 +55,10 @@ public class CourseStateTest {
 
     @Test
     void shouldChangeStateToFinishedWhenCourseIsStarted() {
-        final List<String> subjects = List.of("SUBJECT1", "SUBJECT2");
-        final Movie course = new BaseMovie("NAME", Level.BEGINNER, subjects, null);
+        final List<String> tags = List.of("TAG1", "TAG2");
+        final Movie course = new BaseMovie("NAME", Pegi.ALLPUBLIC, tags, null);
 
-        final Teacher teacher = new Teacher("TEACHER_NAME", "TEACHER_LASTNAME");
-
-        course.ready(teacher);
+        course.ready();
         course.start();
         course.finish();
 

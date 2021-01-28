@@ -4,32 +4,32 @@ import java.util.List;
 
 public class CourseBuilder {
     private String name;
-    private Level level;
-    private List<String> subjects;
-    private Teacher teacher;
+    private Pegi pegi;
+    private List<String> tags;
+    private Author author;
 
     public CourseBuilder name(String name) {
         this.name = name;
         return this;
     }
 
-    public CourseBuilder level(Level level) {
-        this.level = level;
+    public CourseBuilder pegi(Pegi pegi) {
+        this.pegi = pegi;
         return this;
     }
 
-    public CourseBuilder subjects(List<String> subjects) {
-        this.subjects = subjects;
+    public CourseBuilder tags(List<String> tags) {
+        this.tags = tags;
         return this;
     }
 
-    public CourseBuilder teacher(Teacher teacher) {
-        this.teacher = teacher;
+    public CourseBuilder author(Author author) {
+        this.author = author;
         return this;
     }
 
     public Movie build() {
-        return new BaseMovie(name, level, subjects, teacher);
+        return new BaseMovie(name, pegi, tags, author);
     }
 
 }

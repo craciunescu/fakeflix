@@ -1,11 +1,11 @@
 package com.fakeflix.system;
 
-public class Teacher {
+public class Author {
     private final String name;
 
     private final String lastName;
 
-    public Teacher(String name, String lastName) {
+    public Author(String name, String lastName) {
         this.name = name;
         this.lastName = lastName;
     }

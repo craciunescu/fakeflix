@@ -18,18 +18,18 @@ public class CourseDecorator implements Movie {
     }
 
     @Override
-    public Level getLevel() {
-        return decoratedCourse.getLevel();
+    public Pegi getPegi() {
+        return decoratedCourse.getPegi();
     }
 
     @Override
-    public List<String> getSubjects() {
-        return decoratedCourse.getSubjects();
+    public List<String> getTags() {
+        return decoratedCourse.getTags();
     }
 
     @Override
-    public Teacher getTeacher() {
-        return decoratedCourse.getTeacher();
+    public Author getAuthor() {
+        return decoratedCourse.getAuthor();
     }
 
     @Override
@@ -43,13 +43,13 @@ public class CourseDecorator implements Movie {
     }
 
     @Override
-    public void setTeacher(Teacher teacher) {
-        decoratedCourse.setTeacher(teacher);
+    public void setAuthor(Author author) {
+        decoratedCourse.setAuthor(author);
     }
 
     @Override
-    public void ready(Teacher teacher) {
-        decoratedCourse.ready(teacher);
+    public void ready() {
+        decoratedCourse.ready();
     }
 
     @Override

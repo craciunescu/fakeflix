@@ -10,27 +10,27 @@ import org.junit.jupiter.api.Test;
 
 public class PremiumCourseDecoratorTest {
 
-    public static final String ONLINE_SUBJECTS = "Online Subjects";
+    public static final String ONLINE_tags = "Online tags";
 
-    public static final String PREMIUM_SUBJECTS = "Premium Subjects";
+    public static final String PREMIUM_tags = "Premium tags";
 
     @Test
     void shouldInitialize() {
-        final Teacher teacher = new Teacher("John", "Doe");
+        final Author author = new Author("John", "Doe");
 
-        final Movie baseCourse = new BaseMovie("Software design fundamentals", Level.BEGINNER,
-                List.of("SOLID_PRINCIPLES", "GOF_PATTERNS"), teacher);
+        final Movie baseCourse = new BaseMovie("Software design fundamentals", Pegi.ALLPUBLIC,
+                List.of("SOLID_PRINCIPLES", "GOF_PATTERNS"), author);
 
         final PremiumCourseDecorator premiumCourse = new PremiumCourseDecorator(baseCourse);
 
         assertThat(premiumCourse).isNotNull();
-        assertThat(premiumCourse.getTeacher()).isNotNull();
-        assertThat(premiumCourse.getLevel()).isNotNull();
+        assertThat(premiumCourse.getAuthor()).isNotNull();
+        assertThat(premiumCourse.getPegi()).isNotNull();
         assertThat(premiumCourse.getName()).isNotBlank();
-        assertThat(premiumCourse.getSubjects()).contains(ONLINE_SUBJECTS);
-        assertThat(premiumCourse.getSubjects()).contains(PREMIUM_SUBJECTS);
+        assertThat(premiumCourse.getTags()).contains(ONLINE_tags);
+        assertThat(premiumCourse.getTags()).contains(PREMIUM_tags);
 
-        System.out.println(premiumCourse.getSubjects());
+        System.out.println(premiumCourse.getTags());
     }
 
 }

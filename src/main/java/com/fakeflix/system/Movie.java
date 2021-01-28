@@ -7,19 +7,19 @@ public interface Movie {
 
     String getName();
 
-    Level getLevel();
+    Pegi getPegi();
 
-    List<String> getSubjects();
+    List<String> getTags();
 
-    Teacher getTeacher();
+    Author getAuthor();
 
     MovieState getState();
 
     void setState(MovieState state);
 
-    void setTeacher(Teacher teacher);
+    void setAuthor(Author author);
 
-    void ready(Teacher teacher);
+    void ready();
 
     void start();
 
