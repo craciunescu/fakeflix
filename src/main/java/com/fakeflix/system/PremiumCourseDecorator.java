@@ -5,7 +5,7 @@ import java.util.List;
 
 public class PremiumCourseDecorator extends CourseDecorator {
 
-    public PremiumCourseDecorator(Course decoratedCourse) {
+    public PremiumCourseDecorator(Movie decoratedCourse) {
         super(decoratedCourse);
     }
 

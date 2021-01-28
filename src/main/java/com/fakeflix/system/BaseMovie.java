@@ -2,11 +2,11 @@ package com.fakeflix.system;
 
 import java.util.List;
 
-import com.fakeflix.system.state.CourseState;
-import com.fakeflix.system.state.PendingState;
-import com.fakeflix.system.state.ReadyState;
+import com.fakeflix.system.state.MovieState;
+import com.fakeflix.system.state.NotAvailableState;
+import com.fakeflix.system.state.AvailableState;
 
-public class BaseCourse implements Course {
+public class BaseMovie implements Movie {
 
     private String name;
 
@@ -16,14 +16,14 @@ public class BaseCourse implements Course {
 
     private Teacher teacher;
 
-    private CourseState state;
+    private MovieState state;
 
-    public BaseCourse(String name, Level level, List<String> subjects, Teacher teacher) {
+    public BaseMovie(String name, Level level, List<String> subjects, Teacher teacher) {
         this.name = name;
         this.level = level;
         this.subjects = subjects;
         this.teacher = teacher;
-        this.state = (teacher != null) ? new ReadyState() : new PendingState();
+        this.state = (teacher != null) ? new AvailableState() : new NotAvailableState();
     }
 
     @Override
@@ -47,12 +47,12 @@ public class BaseCourse implements Course {
     }
 
     @Override
-    public CourseState getState() {
+    public MovieState getState() {
         return state;
     }
 
     @Override
-    public void setState(CourseState state) {
+    public void setState(MovieState state) {
         this.state = state;
     }
 
@@ -63,7 +63,7 @@ public class BaseCourse implements Course {
 
     @Override
     public void ready(Teacher teacher) {
-        state.ready(this, teacher);
+        state.available(this);
     }
 
     @Override

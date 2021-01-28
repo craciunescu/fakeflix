@@ -6,8 +6,8 @@ import java.util.List;
 
 import com.fakeflix.system.*;
 import com.fakeflix.system.state.FinishedState;
-import com.fakeflix.system.state.PendingState;
-import com.fakeflix.system.state.ReadyState;
+import com.fakeflix.system.state.NotAvailableState;
+import com.fakeflix.system.state.AvailableState;
 import com.fakeflix.system.state.StartedState;
 
 import org.junit.jupiter.api.Test;
@@ -16,27 +16,27 @@ public class CourseStateTest {
     @Test
     void shouldNotChangeStateToReady() {
         final List<String> subjects = List.of("SUBJECT1", "SUBJECT2");
-        final Course course = new BaseCourse("NAME", Level.BEGINNER, subjects, null);
+        final Movie course = new BaseMovie("NAME", Level.BEGINNER, subjects, null);
 
         course.start();
 
-        assertThat(course.getState()).isInstanceOf(PendingState.class);
+        assertThat(course.getState()).isInstanceOf(NotAvailableState.class);
     }
 
     @Test
     void shouldChangeStateToReadyWhenAssignedATeacher() {
         final List<String> subjects = List.of("SUBJECT1", "SUBJECT2");
-        final Course course = new BaseCourse("NAME", Level.BEGINNER, subjects, null);
+        final Movie course = new BaseMovie("NAME", Level.BEGINNER, subjects, null);
 
         final Teacher teacher = new Teacher("TEACHER_NAME", "TEACHER_LASTNAME");
         course.ready(teacher);
-        assertThat(course.getState()).isInstanceOf(ReadyState.class);
+        assertThat(course.getState()).isInstanceOf(AvailableState.class);
     }
 
     @Test
     void shouldChangeStateToStartedWhenCourseIsReady() {
         final List<String> subjects = List.of("SUBJECT1", "SUBJECT2");
-        final Course course = new BaseCourse("NAME", Level.BEGINNER, subjects, null);
+        final Movie course = new BaseMovie("NAME", Level.BEGINNER, subjects, null);
 
         final Teacher teacher = new Teacher("TEACHER_NAME", "TEACHER_LASTNAME");
 
@@ -49,20 +49,20 @@ public class CourseStateTest {
     @Test
     void shouldNotChangeStateToFinishedWhenCourseIsNotStarted() {
         final List<String> subjects = List.of("SUBJECT1", "SUBJECT2");
-        final Course course = new BaseCourse("NAME", Level.BEGINNER, subjects, null);
+        final Movie course = new BaseMovie("NAME", Level.BEGINNER, subjects, null);
 
         final Teacher teacher = new Teacher("TEACHER_NAME", "TEACHER_LASTNAME");
 
         course.ready(teacher);
         course.finish();
 
-        assertThat(course.getState()).isInstanceOf(ReadyState.class);
+        assertThat(course.getState()).isInstanceOf(AvailableState.class);
     }
 
     @Test
     void shouldChangeStateToFinishedWhenCourseIsStarted() {
         final List<String> subjects = List.of("SUBJECT1", "SUBJECT2");
-        final Course course = new BaseCourse("NAME", Level.BEGINNER, subjects, null);
+        final Movie course = new BaseMovie("NAME", Level.BEGINNER, subjects, null);
 
         final Teacher teacher = new Teacher("TEACHER_NAME", "TEACHER_LASTNAME");
 

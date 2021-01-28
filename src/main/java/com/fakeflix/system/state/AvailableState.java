@@ -5,18 +5,18 @@ import com.fakeflix.system.Movie;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class FinishedState implements MovieState {
+public class AvailableState implements MovieState {
     private static final Logger logger = LoggerFactory.getLogger(FinishedState.class);
 
     public final String name;
 
-    public FinishedState() {
-        this.name = "FINISHED";
+    public AvailableState() {
+        this.name = "AVAILABLE";
     }
 
     @Override
     public void available(Movie movie) {
-        logger.error("Movie already available");
+        logger.error("Movie is already available");
     }
 
     @Override
@@ -27,7 +27,7 @@ public class FinishedState implements MovieState {
 
     @Override
     public void finish(Movie movie) {
-        logger.error("Movie already finished");
+        logger.error("The user has not started the film yet, cannot be finished");
     }
 
 }

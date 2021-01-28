@@ -2,13 +2,13 @@ package com.fakeflix.system;
 
 import java.util.List;
 
-import com.fakeflix.system.state.CourseState;
+import com.fakeflix.system.state.MovieState;
 
-public class CourseDecorator implements Course {
+public class CourseDecorator implements Movie {
 
-    private Course decoratedCourse;
+    private Movie decoratedCourse;
 
-    public CourseDecorator(Course decoratedCourse) {
+    public CourseDecorator(Movie decoratedCourse) {
         this.decoratedCourse = decoratedCourse;
     }
 
@@ -33,12 +33,12 @@ public class CourseDecorator implements Course {
     }
 
     @Override
-    public CourseState getState() {
+    public MovieState getState() {
         return decoratedCourse.getState();
     }
 
     @Override
-    public void setState(CourseState state) {
+    public void setState(MovieState state) {
         decoratedCourse.setState(state);
     }
 

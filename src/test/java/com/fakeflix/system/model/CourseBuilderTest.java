@@ -1,6 +1,6 @@
 package com.fakeflix.system.model;
 
-import com.fakeflix.system.Course;
+import com.fakeflix.system.Movie;
 import com.fakeflix.system.CourseBuilder;
 import com.fakeflix.system.Level;
 import com.fakeflix.system.Teacher;
@@ -15,7 +15,7 @@ public class CourseBuilderTest {
     void shouldInitialize() {
         final Teacher teacher = new Teacher("John", "Doe");
 
-        final Course course = new CourseBuilder().name("Software design fundamentals").level(Level.BEGINNER)
+        final Movie course = new CourseBuilder().name("Software design fundamentals").level(Level.BEGINNER)
                 .subjects(List.of("SOLID_PRINCIPLES", "GOF_PATTERNS")).teacher(teacher).build();
 
         assertThat(course).isNotNull();

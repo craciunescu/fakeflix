@@ -1,12 +1,11 @@
 package com.fakeflix.system.state;
 
-import com.fakeflix.system.Course;
-import com.fakeflix.system.Teacher;
+import com.fakeflix.system.Movie;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class StartedState implements CourseState {
+public class StartedState implements MovieState {
     private static final Logger logger = LoggerFactory.getLogger(FinishedState.class);
 
     public final String name;
@@ -16,20 +15,21 @@ public class StartedState implements CourseState {
     }
 
     @Override
-    public void ready(Course course, Teacher teacher) {
-        logger.error("Course is start, cannot ready");
+    public void available(Movie movie) {
+        logger.error("Movie already available");
     }
 
     @Override
-    public void start(Course course) {
-        logger.error("Course is already start");
+    public void start(Movie movie) {
+        logger.info("Starting movie");
+        movie.setState(new StartedState());
 
     }
 
     @Override
-    public void finish(Course course) {
+    public void finish(Movie movie) {
         logger.info("Finishing course");
-        course.setState(new FinishedState());
+        movie.setState(new FinishedState());
     }
 
 }

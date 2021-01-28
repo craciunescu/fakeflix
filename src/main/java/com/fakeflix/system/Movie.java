@@ -1,9 +1,9 @@
 package com.fakeflix.system;
 
-import com.fakeflix.system.state.CourseState;
+import com.fakeflix.system.state.MovieState;
 import java.util.List;
 
-public interface Course {
+public interface Movie {
 
     String getName();
 
@@ -13,9 +13,9 @@ public interface Course {
 
     Teacher getTeacher();
 
-    CourseState getState();
+    MovieState getState();
 
-    void setState(CourseState state);
+    void setState(MovieState state);
 
     void setTeacher(Teacher teacher);
 

@@ -28,8 +28,8 @@ public class CourseBuilder {
         return this;
     }
 
-    public Course build() {
-        return new BaseCourse(name, level, subjects, teacher);
+    public Movie build() {
+        return new BaseMovie(name, level, subjects, teacher);
     }
 
 }

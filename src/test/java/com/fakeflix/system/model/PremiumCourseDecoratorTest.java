@@ -18,7 +18,7 @@ public class PremiumCourseDecoratorTest {
     void shouldInitialize() {
         final Teacher teacher = new Teacher("John", "Doe");
 
-        final Course baseCourse = new BaseCourse("Software design fundamentals", Level.BEGINNER,
+        final Movie baseCourse = new BaseMovie("Software design fundamentals", Level.BEGINNER,
                 List.of("SOLID_PRINCIPLES", "GOF_PATTERNS"), teacher);
 
         final PremiumCourseDecorator premiumCourse = new PremiumCourseDecorator(baseCourse);
