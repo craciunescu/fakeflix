@@ -5,7 +5,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
-import com.fakeflix.system.*;
+import com.fakeflix.system.media.*;
 
 public class MovieTest {
     public static final String ACTION = "ACTION";
@@ -17,14 +17,14 @@ public class MovieTest {
         final Author author = new Author("John", "Doe");
 
         final Movie baseCourse = new BaseMovie("The incredibles adventures of a ghost", Pegi.ALLPUBLIC,
-                List.of("ACTION", "HORROR"), author);
+                List.of(Tag.HORROR, Tag.ACTION), author);
 
         assertThat(baseCourse).isNotNull();
         assertThat(baseCourse.getAuthor()).isNotNull();
         assertThat(baseCourse.getPegi()).isNotNull();
         assertThat(baseCourse.getName()).isNotBlank();
-        assertThat(baseCourse.getTags()).contains("ACTION");
-        assertThat(baseCourse.getTags()).contains("HORROR");
+        assertThat(baseCourse.getTags()).contains(Tag.HORROR);
+        assertThat(baseCourse.getTags()).contains(Tag.ACTION);
     }
 
 }

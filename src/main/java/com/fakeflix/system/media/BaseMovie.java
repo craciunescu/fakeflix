@@ -1,8 +1,8 @@
-package com.fakeflix.system;
+package com.fakeflix.system.media;
 
 import java.util.List;
 
-import com.fakeflix.system.state.MovieState;
+import com.fakeflix.system.media.state.MovieState;
 
 public class BaseMovie implements Movie {
 
@@ -10,13 +10,13 @@ public class BaseMovie implements Movie {
 
     private Pegi pegi;
 
-    private List<String> tags;
+    private List<Tag> tags;
 
     private Author author;
 
     private MovieState state;
 
-    public BaseMovie(String name, Pegi pegi, List<String> tags, Author author) {
+    public BaseMovie(String name, Pegi pegi, List<Tag> tags, Author author) {
         this.name = name;
         this.pegi = pegi;
         this.tags = tags;
@@ -34,7 +34,7 @@ public class BaseMovie implements Movie {
     }
 
     @Override
-    public List<String> getTags() {
+    public List<Tag> getTags() {
         return tags;
     }
 

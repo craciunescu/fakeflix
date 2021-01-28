@@ -1,11 +1,11 @@
-package com.fakeflix.system;
+package com.fakeflix.system.media;
 
 import java.util.List;
 
 public class MovieBuilder {
     private String name;
     private Pegi pegi;
-    private List<String> tags;
+    private List<Tag> tags;
     private Author author;
 
     public MovieBuilder name(String name) {
@@ -18,7 +18,7 @@ public class MovieBuilder {
         return this;
     }
 
-    public MovieBuilder tags(List<String> tags) {
+    public MovieBuilder tags(List<Tag> tags) {
         this.tags = tags;
         return this;
     }

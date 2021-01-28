@@ -1,6 +1,6 @@
-package com.fakeflix.system.state;
+package com.fakeflix.system.media.state;
 
-import com.fakeflix.system.Movie;
+import com.fakeflix.system.media.Movie;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
