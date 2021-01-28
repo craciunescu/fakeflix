@@ -1,0 +1,5 @@
+FROM postgres
+ENV POSTGRES_USER fakeuser
+ENV POSTGRES_PASSWORD fakepass
+ENV POSTGRES_DB fakedb
+COPY init.sql /docker-entrypoint-initdb.d/
