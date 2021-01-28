@@ -4,18 +4,18 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.List;
 
-import com.fakeflix.system.*;
-import com.fakeflix.system.state.FinishedState;
-import com.fakeflix.system.state.NotAvailableState;
-import com.fakeflix.system.state.AvailableState;
-import com.fakeflix.system.state.StartedState;
+import com.fakeflix.system.media.*;
+import com.fakeflix.system.media.state.FinishedState;
+import com.fakeflix.system.media.state.NotAvailableState;
+import com.fakeflix.system.media.state.AvailableState;
+import com.fakeflix.system.media.state.StartedState;
 
 import org.junit.jupiter.api.Test;
 
 public class CourseStateTest {
     @Test
     void shouldNotChangeStateToReady() {
-        final List<String> tags = List.of("TAG1", "TAG2");
+        final List<Tag> tags = List.of(Tag.HORROR, Tag.ACTION);
         final Movie course = new BaseMovie("NAME", Pegi.ALLPUBLIC, tags, null);
 
         course.start();
@@ -25,7 +25,7 @@ public class CourseStateTest {
 
     @Test
     void shouldChangeStateToReadyWhenAssignedATeacher() {
-        final List<String> tags = List.of("TAG1", "TAG2");
+        final List<Tag> tags = List.of(Tag.HORROR, Tag.ACTION);
         final Movie course = new BaseMovie("NAME", Pegi.ALLPUBLIC, tags, null);
 
         course.ready();
@@ -34,7 +34,7 @@ public class CourseStateTest {
 
     @Test
     void shouldChangeStateToStartedWhenCourseIsReady() {
-        final List<String> tags = List.of("TAG1", "TAG2");
+        final List<Tag> tags = List.of(Tag.HORROR, Tag.ACTION);
         final Movie course = new BaseMovie("NAME", Pegi.ALLPUBLIC, tags, null);
 
         course.start();
@@ -44,7 +44,7 @@ public class CourseStateTest {
 
     @Test
     void shouldNotChangeStateToFinishedWhenCourseIsNotStarted() {
-        final List<String> tags = List.of("TAG1", "TAG2");
+        final List<Tag> tags = List.of(Tag.HORROR, Tag.ACTION);
         final Movie course = new BaseMovie("NAME", Pegi.ALLPUBLIC, tags, null);
 
         course.ready();
@@ -55,7 +55,7 @@ public class CourseStateTest {
 
     @Test
     void shouldChangeStateToFinishedWhenCourseIsStarted() {
-        final List<String> tags = List.of("TAG1", "TAG2");
+        final List<Tag> tags = List.of(Tag.HORROR, Tag.ACTION);
         final Movie course = new BaseMovie("NAME", Pegi.ALLPUBLIC, tags, null);
 
         course.ready();

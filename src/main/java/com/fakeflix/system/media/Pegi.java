@@ -1,4 +1,4 @@
-package com.fakeflix.system;
+package com.fakeflix.system.media;
 
 public enum Pegi {
 

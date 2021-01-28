@@ -1,6 +1,6 @@
-package com.fakeflix.system.state;
+package com.fakeflix.system.media.state;
 
-import com.fakeflix.system.Movie;
+import com.fakeflix.system.media.Movie;
 
 public interface MovieState {
 

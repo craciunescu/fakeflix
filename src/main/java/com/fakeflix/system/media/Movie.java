@@ -1,6 +1,6 @@
-package com.fakeflix.system;
+package com.fakeflix.system.media;
 
-import com.fakeflix.system.state.MovieState;
+import com.fakeflix.system.media.state.MovieState;
 import java.util.List;
 
 public interface Movie {
@@ -9,7 +9,7 @@ public interface Movie {
 
     Pegi getPegi();
 
-    List<String> getTags();
+    List<Tag> getTags();
 
     Author getAuthor();
 

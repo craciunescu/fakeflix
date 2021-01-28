@@ -1,8 +1,8 @@
-package com.fakeflix.system;
+package com.fakeflix.system.media;
 
 import java.util.List;
 
-import com.fakeflix.system.state.MovieState;
+import com.fakeflix.system.media.state.MovieState;
 
 public class MovieDecorator implements Movie {
 
@@ -23,7 +23,7 @@ public class MovieDecorator implements Movie {
     }
 
     @Override
-    public List<String> getTags() {
+    public List<Tag> getTags() {
         return decoratedCourse.getTags();
     }
 
