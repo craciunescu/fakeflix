@@ -4,7 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.List;
 
-import com.fakeflix.system.media.*;
+import com.fakeflix.system.domain.*;
 
 import org.junit.jupiter.api.Test;
 

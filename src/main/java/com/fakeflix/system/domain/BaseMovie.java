@@ -1,17 +1,27 @@
-package com.fakeflix.system.media;
+package com.fakeflix.system.domain;
 
 import java.util.List;
 
-import com.fakeflix.system.media.state.MovieState;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
+import com.fakeflix.system.domain.state.MovieState;
+
+@Entity
 public class BaseMovie implements Movie {
 
+    @Id
+    private Long id;
+    @Column
     private String name;
-
+    @Column
     private Pegi pegi;
 
     private List<Tag> tags;
 
+    @ManyToOne
     private Author author;
 
     private MovieState state;

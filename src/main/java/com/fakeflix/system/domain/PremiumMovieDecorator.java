@@ -1,4 +1,4 @@
-package com.fakeflix.system.media;
+package com.fakeflix.system.domain;
 
 public class PremiumMovieDecorator extends MovieDecorator {
 

@@ -4,11 +4,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.List;
 
-import com.fakeflix.system.media.*;
-import com.fakeflix.system.media.state.FinishedState;
-import com.fakeflix.system.media.state.NotAvailableState;
-import com.fakeflix.system.media.state.AvailableState;
-import com.fakeflix.system.media.state.StartedState;
+import com.fakeflix.system.domain.*;
+import com.fakeflix.system.domain.state.AvailableState;
+import com.fakeflix.system.domain.state.FinishedState;
+import com.fakeflix.system.domain.state.NotAvailableState;
+import com.fakeflix.system.domain.state.StartedState;
 
 import org.junit.jupiter.api.Test;
 

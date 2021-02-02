@@ -1,8 +1,6 @@
-package com.fakeflix.system.userInfo;
+package com.fakeflix.system.domain;
 
 import java.util.List;
-
-import com.fakeflix.system.media.Movie;
 
 import lombok.Data;
 

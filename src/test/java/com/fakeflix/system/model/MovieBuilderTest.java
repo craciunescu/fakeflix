@@ -1,15 +1,15 @@
 package com.fakeflix.system.model;
 
-import com.fakeflix.system.media.Movie;
-import com.fakeflix.system.media.MovieBuilder;
-import com.fakeflix.system.media.Pegi;
-import com.fakeflix.system.media.Tag;
-import com.fakeflix.system.media.Author;
-
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.List;
+
+import com.fakeflix.system.domain.Author;
+import com.fakeflix.system.domain.Movie;
+import com.fakeflix.system.domain.MovieBuilder;
+import com.fakeflix.system.domain.Pegi;
+import com.fakeflix.system.domain.Tag;
 
 public class MovieBuilderTest {
     @Test

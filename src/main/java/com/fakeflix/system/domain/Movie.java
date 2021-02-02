@@ -1,7 +1,8 @@
-package com.fakeflix.system.media;
+package com.fakeflix.system.domain;
 
-import com.fakeflix.system.media.state.MovieState;
 import java.util.List;
+
+import com.fakeflix.system.domain.state.MovieState;
 
 public interface Movie {
 

@@ -1,8 +1,8 @@
-package com.fakeflix.system.media;
+package com.fakeflix.system.domain;
 
 import java.util.List;
 
-import com.fakeflix.system.media.state.MovieState;
+import com.fakeflix.system.domain.state.MovieState;
 
 public class MovieDecorator implements Movie {
 
