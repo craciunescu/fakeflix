@@ -14,7 +14,7 @@ public class PremiumCourseDecoratorTest {
     void shouldInitialize() {
         final Author author = new Author("John", "Doe");
 
-        final Movie baseCourse = new BaseMovie("FILM1", Pegi.ALLPUBLIC, List.of(Tag.ACTION, Tag.HORROR), author);
+        final Media baseCourse = new Movie("FILM1", Pegi.ALLPUBLIC, List.of(Tag.ACTION, Tag.HORROR), author);
 
         final PremiumMovieDecorator premiumCourse = new PremiumMovieDecorator(baseCourse);
 

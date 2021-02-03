@@ -17,7 +17,7 @@ public class MovieTest {
     void shouldInitialize() {
         final Author author = new Author("John", "Doe");
 
-        final Movie baseCourse = new BaseMovie("The incredibles adventures of a ghost", Pegi.ALLPUBLIC,
+        final Media baseCourse = new Movie("The incredibles adventures of a ghost", Pegi.ALLPUBLIC,
                 List.of(Tag.HORROR, Tag.ACTION), author);
 
         assertThat(baseCourse).isNotNull();

@@ -1,0 +1,9 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create # Not very sure this should be CREATE specifically
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  datasource:
+    url:  "jdbc:postgresql://172.19.0.2:5432/springbootjpa"
+    username: fakeuser
+    password: fakepass

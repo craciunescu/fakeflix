@@ -36,7 +36,6 @@ DROP TABLE IF EXISTS MEDIA;
 CREATE TABLE MEDIA
 (
     media_id integer NOT NULL,
-    name text NOT NULL,
     title text NOT NULL,
     PRIMARY KEY (media_id)
 );
